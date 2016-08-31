@@ -4,11 +4,11 @@
 	<title>Practica 1</title>
 </head>
 <body>
-<h3><a id="DI" href=" #Dir_IP">Direccionamiento IP</a>&nbsp;&nbsp;
+<h3><a id="DI" href=" #Dir_IP">Dirección IP</a>&nbsp;&nbsp;
 	        	 <a id="CI" href="#cla_red">Clases de direccionamiento IP</a>&nbsp;&nbsp;
 	        	  <a id="SR" href="#sub_red">Subredes</a></h3>
 <hr />
-	<h3><a id="Dir_IP">Direccionamiento IP</a></h3>
+	<h3><a id="Dir_IP">Dirección IP</a></h3>
 <p>Una <strong>dirección IP</strong> es un número de identificación de un ordenador o de una red (subred) - depende de la máscara que se utiliza.
 Dirección IP es una secuencia de unos y ceros de 32 bits expresada en cuatro octetos (4 byte)separados por puntos. Para hacer más comprensible se denomina en decimal como cuatro numeros separados por puntos.</p>
 <strong>en binario 10101100.00011000.00000111.00101011</strong><br />
@@ -349,6 +349,19 @@ La dirección <strong>192.168.1.255/24</strong> se denomina como <strong>direcci
 <br style="clear: both" />
 <br />
 <hr />
+
+<h1>Qué es la MAC Address de un ordenador y para qué sirve</h1>
+<p>La <strong>dirección MAC o MAC Adresss (media access control address)</strong> de un dispositivo, es un <strong>identificador único que se les asigna a las interfaces de redes</strong>. Las tarjetas de red inalámbrica o las de red Ethernet, los <em><a href="http://bitelia.com/2014/04/configuracion-seguridad-routers">routers</a></em>, las impresoras, etc., todos tienen un identificador propio de 48 bits que no se repite en todo el mundo, es como <strong>su propia huella digital</strong> para poder comunicarse. En una red informática los equipos pueden identificarse a través de la dirección IP, pero también se pueden identificar por su MAC Address.
+<q class=alignright>Las direcciones MAC son únicas y no se repiten nunca entre dispositivos.</q></p>
+<p>Los fabricantes suelen añadir este identificador cuando se fabrican los dispositivos, y usualmente se almacena en la memoria ROM (read only memory) del <em><a href="http://bitelia.com/tag/hardware">hardware</a></em>, o en algún otro mecanismo del <em>firmware</em>. Por esta razón <strong>es imposible modificarla ya que está en un área de solo lectura</strong> que no puede ser alterada. Además también existe un ente regulador que se encarga de proveer las normas mediante las cuales de asignan las direcciones MAC, este es el Instituto de Ingeniería Eléctrica y Electrónica <a href="http://www.wikiwand.com/en/Institute_of_Electrical_and_Electronics_Engineers">(IEEE)</a>.</p>
+<h2>¿Para qué sirve la MAC Address?</h2>
+<p>Entendiendo que la dirección MAC es un identificador único de todos los dispositivos de red, sabemos que cualquier aparato que posea <em>hardware</em> que le permita conectarse a una red tiene su propia MAC Address. Los ordenadores, los teléfonos móviles, las tablets, los <em>routers</em>, las impresoras, los <em>switchers</em>, etc. Todos tienen su propia dirección.</p>
+<p>Uno de los usos más comunes que los usuarios le dan a las MAC Address, es la de <strong>restringir el acceso a una red</strong>. Probablemente muchos han tenido su primer contacto con este término cuando decidieron adentrarse en la configuración de sus <em>routers</em>. Podemos <strong>usar la dirección MAC para permitir o restringir el acceso a solo ciertos dispositivos</strong>. Es una buena manera de asegurar la seguridad de tu red, si solo autorizas las direcciones MAC de tus propios equipos y no permites la conexión de ninguna MAC Address desconocida.</p>
+<div id="attachment_155691" class="wp-caption aligncenter"><img src="https://i0.wp.com/hipertextual.com/archivo/wp-content/uploads/2014/09/que-es-la-mac-address.jpg?resize=800%2C440" alt="qué es la mac address" class="size-large wp-image-155691" data-recalc-dims="1"/><p class="wp-caption-text">Foto de: <a href="https://www.flickr.com/photos/w00ter/15072353052/">Wouter de Bruijn</a> bajo licencia CC</p></div>
+<p>La MAC Address también puede servir para <strong>obtener la ubicación de un dispositivo</strong> a través de GPS, lo que puede permitir el rastreo de los movimientos de una persona, y tiene una precisión mucho mayor que la del geoposicionamiento a través de la IP. Si tenemos el WiFi encendido y nos acercamos a un <em>router</em>, de inmediato le estamos <a href="http://geekland.hol.es/mac-address-que-es-usos-como-cambiarla/">dejando nuestra MAC Address en su registro</a>.</p>
+<h2>¿Se puede ocultar o cambiar la MAC Address?</h2>
+<p>Como mencionamos antes, la MAC Address va en la memoria de solo lectura y <strong>no puede ser alterada, pero si puede ser enmascarada</strong> u ocultada. El <strong><a href="http://www.wikiwand.com/es/MAC_spoofing">MAC <em>spoofing</em></a> o suplantanción de MAC</strong>, es una técnica para &#8220;cambiar la dirección MAC&#8221; haciéndole creer al sistema operativo que tienes una diferente. Haciendo esto puedes cambiar la identidad de un dispositivo por la razón que sea. Por ejemplo, cuando nos conectamos a una red WiFi pública podemos evitar que un usuario malintencionado clone nuestra dirección MAC y comenta un delito usando el identificador de nuestro ordenador, y &#8220;dejándonos el muerto&#8221;.</p>
+<p>También podemos <strong>saltarnos listas de control de acceso en servidores o <em>routers</em></strong> si cambiamos nuestra MAC Address, suplantando la dirección de otro dispositivo autorizado o simplemente usando una nueva que no esté entre las bloqueadas. Claramente este tipo de prácticas pueden usarse para fines tanto legales como ilegales.</p>
 
 </body>
 </html>
