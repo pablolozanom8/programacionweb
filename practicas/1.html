@@ -4,6 +4,351 @@
 	<title>Practica 1</title>
 </head>
 <body>
+<h3><a id="DI" href=" #Dir_IP">Direccionamiento IP</a>&nbsp;&nbsp;
+	        	 <a id="CI" href="#cla_red">Clases de direccionamiento IP</a>&nbsp;&nbsp;
+	        	  <a id="SR" href="#sub_red">Subredes</a></h3>
+<hr />
+	<h3><a id="Dir_IP">Direccionamiento IP</a></h3>
+<p>Una <strong>dirección IP</strong> es un número de identificación de un ordenador o de una red (subred) - depende de la máscara que se utiliza.
+Dirección IP es una secuencia de unos y ceros de 32 bits expresada en cuatro octetos (4 byte)separados por puntos. Para hacer más comprensible se denomina en decimal como cuatro numeros separados por puntos.</p>
+<strong>en binario 10101100.00011000.00000111.00101011</strong><br />
+<strong>en decimal 172.24.7.43</strong><br />
+ <p><strong>Dirección IP privada</strong> identifica el equipo dentro de una red LAN - Local Area Networks - dentro de una empresa o red doméstica.</p>
+ <p><strong>Dirección IP pública</strong> identifica el equipo en internet. <b>Es única - no se puede repetir.</b></p>
+ Una dirección IP consta de dos partes. Primera parte identifica dirección de la rde y la segunda sirve para identificar los equipos en la red. Para saber que rango de bits coresponde para cada parte se utiliza <a href="mascara.html">la máscara</a>. 
+ <br />
+ <p><strong>Máscara</strong> es combinación de 32 bits expresados en cuatro octetos (4 byte) separados por puntos. Es utilizada para describir cuál es la porción de una dirección IP que se refiere a la red o subred y cuál es la que se refiere al host.
+ La máscara se utiliza para extraer información de red o subred de la dirección IP.<br />
+ </p>
+ <br />
+ <strong>Dirección IP 192.168.15.43</strong><br />
+ <strong>Máscara 255.255.255.0</strong><br />
+  <table width="200" border="0">
+    <tr>
+        <td><table width="150" border="1">
+    <tr>
+        <th>192
+        </th>
+        <th>168
+        </th>
+        <th>15
+        </th>
+        
+    </tr>
+    <tr>
+        <td>11000000
+        </td>
+        <td>10101000
+        </td>
+        <td>00001111
+        </td>
+        
+    </tr>
+    <tr>
+        <th>255
+        </th>
+        <th>255
+        </th>
+        <th>255
+        </th>
+        
+    </tr>
+    <tr>
+        <td>11111111
+        </td>
+        <td>11111111
+        </td>
+        <td>11111111
+        </td>
+     </tr>
+	
+</table>
+        </td>
+        <td><table width="50" border="1">
+    <tr>
+        <th>43
+        </th>
+    </tr>
+    <tr>
+        
+        <td>00101011
+        </td>
+    </tr>
+    <tr>
+        
+        <th>0
+        </th>
+    </tr>
+    <tr>
+        <td>00000000
+        </td>
+    </tr>
+	
+</table>
+        </td>
+    </tr>
+    <tr>
+        <td>Dirección de red
+        </td>
+        <td>Dirección de host
+        </td>
+    </tr>
+</table>
+<br />
+<h3>Clases de direccionamiento IP</h3>
+ <p>Las direcciones IP se dividen en clases para definir las redes de tamaño grande (A), mediano (B), pequeño (C), de uso multicast (D) y de uso experimental (E).
+ Dentro de cada rango de clases A,B,C existen direcciones privadas para uso interno y no las veremos en internet.(Normativa RFC 1918).</p>
+ <b>Clase A</b>
+ <ul>
+ <li>Rango de direcciones IP: 1.0.0.0 a 126.0.0.0</li>
+ <li>Máscara de red: 255.0.0.0</li>
+ <li>Direcciones privadas: 10.0.0.0 a 10.255.255.255</li>
+ </ul>
+<strong>Clase B</strong>
+<ul>
+<li>Rango de direcciones IP: 128.0.0.0 a 191.255.0.0</li>
+ <li>Máscara de red: 255.255.0.0</li>
+ <li>Direcciones privadas: 172.16.0.0 a 172.31.255.255</li>
+ </ul>
+ <b>Clase C</b>
+ <ul>
+ <li>Rango de direcciones IP: 192.0.0.0 a 223.255.255.0</li>
+ <li>Máscara de red: 255.255.255.0</li>
+ <li>Direcciones privadas: 192.168.0.0 a 192.168.255.255</li>
+ </ul>
+ <b>Clase D</b>
+ <ul>
+ <li>Rango de direcciones IP: 224.0.0.0 a 239.255.255.255 uso multicast o multidifusión</li>
+ </ul>
+ <b>Clase E</b>
+ <ul>
+ <li>Rango de direcciones IP: 240.0.0.0 a 254.255.255.255 uso experimental</li>
+ </ul>
+ <p>La dirección <strong>127.0.0.0/8</strong> se denomina como - LoopBack Address - no se puede usar para direccionamiento privado o público.</p>
+<p> La máscara <strong>255.255.255.255 o /32</strong> sirve para identificar un host específico.</p>
+  <strong>Los métodos para expresar la máscara:</strong>
+<ul>
+	<li>Clase A <strong>255.0.0.0</strong> o <strong>/8</strong></li>
+	<li>Clase B <strong>255.255.0.0</strong> o <strong>/16</strong></li>
+	<li>Clase C <strong>255.255.255.255.0</strong> o <strong>/24</strong></li>
+</ul>    
+   <h4>Ejemplo de direcciones IP para redes con clase</h4>
+   
+<p>En la <strong>clase A</strong> pura (la máscara 255.0.0.0 o /8) se puede obtener 2<sup>24</sup>-2=16777214 direcciones IP de host para una red.<br />
+La dirección <strong>10.0.0.0/8 </strong>se denomina como <strong>dirección IP de red</strong> con todos los bits de host a "0".<br />
+La dirección <strong>10.255.255.255/8</strong> se denomina como <strong>dirección IP de broadcast (difusión)</strong> con todos los bits de host a "1".</p>
+<p>En la <strong>clase B</strong> pura (la máscara 255.255.0.0 o /16) se puede obtener 2<sup>16</sup>-2=65534 direcciones IP de host para una red.<br />
+La dirección <strong>172.16.0.0/16</strong> se denomina como <strong>dirección IP de red</strong> con todos los bits de host a "0".<br />
+La dirección <strong>172.16.255.255/16</strong> se denomina como dirección <strong>IP de broadcast (difusión)</strong> con todos los bits de host a "1".</p>
+<p>En la <strong>clase C</strong> pura (la máscara 255.255.255.0 o /24) se puede obtener 2<sup>8</sup>-2=254 direcciones IP de host para una red.<br />
+Un ejemplo de direcciones restrinjidas (no validas) para un host en la red clase C:<br /> 
+La dirección <strong>192.168.1.0/24</strong> se denomina como <strong>dirección IP de red</strong> con todos los bits de host a "0".<br />
+La dirección <strong>192.168.1.255/24</strong> se denomina como <strong>dirección IP de broadcast (difusión)</strong> con todos los bits de host a "1".
+</p>   
+<br />
+</script>
+<hr />
+ <br />
+    <h3><a id="sub_red">Direccionamiento IP - subredes</a></h3>
+    <p>El proceso de creación de subredes comienza prestando al rango de host la cantidad de bits nesesaria para la cantidad de subredes que  queremos obtener.
+    En esta acción de pedido tienes que dejar como mínimo dos bits del rango de host. </p>
+    <p>Clase A cantidad de bits disponible <strong>22</strong> bits <br />
+    Clase B cantidad de bits disponible <strong>14</strong> bits<br />
+    Clase C cantidad de bits disponible <strong>6</strong> bits</p>
+    <br />
+    <p>Ejemplo para la red clase A.<br /> 
+     Primero hacemos un cálculo de la máscara de subred.<br />
+     Para obtener por ejemplo las 9 subredes válidas, tenemos que calcular el rango de los bits necesarios para el 
+     direccionamiento de las subredes.
+     <br /><br />
+     <strong>2<sup>N</sup>-2=número de subredes</strong>.   N - número de bits.
+     </p>
+     <p>La razón de restar estos dos números de subredes es porque la dirección con los bits a 0 es la dirección IP de la 
+     red original y con los bits a 1 es la dirección broadcast de la red original.
+     </p>
+     <p> 
+     <strong>2<sup>4</sup>-2=14</strong> <br />
+     En nuestro caso aprovechamos 4 bits (con 3 bits disponemos en maximo 8 subredes - 6 válidas) para calcular la máscara e direccionamiento IP de nuestros suredes.<br />
+     La máscara de red clase A:<br />  
+     en binario <strong>11111111 . 00000000 . 00000000 . 00000000</strong> y en decimal <strong>255.0.0.0 (/8)</strong><br />
+     Para obtener la máscara de subred utilizamos 4 bits de rango de host - los 4 bits ponemos a 1:<br />
+     en binario <strong>11111111 . </strong> <strong style="color: #FF0000">1111</strong><strong>0000 . 00000000 . 00000000</strong> y en decimal <strong>255.240.0.0 (/12)</strong><br />
+     Los direcciones IP de red, de difusión e rango de direcciones para los host tenéis en la tabla. ;)<br />
+    </p>
+    <br /><br />
+    <table cellpadding="1" cellspacing="1" border="1"  width="570" style="background-color: #E6E6FA">
+<tr>
+<td align="center" >Número de subred</td>
+<td align="center" >dirección<br />IP de subred</td>
+<td align="center" >dirección<br />IP de difusión</td>
+<td align="center" >rango de direcciones<br />IP de host</td>
+</tr>
+<tr>
+<td align="center" style="color: #ff0000"><em>0</em></td>
+<td align="center" style="color: #ff0000"><em>10.0.0.0/12</em></td>
+<td align="center" style="color: #ff0000"><em>10.15.255.255/12</em></td>
+<td align="center" style="color: #ff0000"><em>10.0.0.1/12 - 10.15.255.254/12</em></td>
+</tr>
+<tr>
+<td align="center" >1</td>
+<td align="center" >10.16.0.0/12</td>
+<td align="center" >10.31.255.255/12</td>
+<td align="center" >10.16.0.1/12 - 10.31.255.254/12 </td>
+</tr>
+<tr>
+<td align="center" >2</td>
+<td align="center" >10.32.0.0/12</td>
+<td align="center" >10.47.255.255/12</td>
+<td align="center" >10.32.0.1/12 - 10.47.255.254/12 </td>
+</tr>
+<tr>
+<td align="center" >3</td>
+<td align="center" >10.48.0.0/12</td>
+<td align="center" >10.63.255.255/12</td>
+<td align="center" >10.48.0.1/12 - 10.63.255.254/12 </td>
+</tr>
+<tr>
+<td align="center" >4</td>
+<td align="center" >10.64.0.0/12</td>
+<td align="center" >10.79.255.255/12</td>
+<td align="center" >10.64.0.1/12 - 10.79.255.254/12</td>
+</tr>
+<tr>
+<td align="center" >5</td>
+<td align="center" >10.80.0.0/12</td>
+<td align="center" >10.95.255.255/12</td>
+<td align="center" >10.80.0.1/12 - 10.95.255.254/12</td>
+</tr>
+<tr>
+<td align="center" >6</td>
+<td align="center" >10.96.0.0/12</td>
+<td align="center" >10.111.255.255/12</td>
+<td align="center" >10.96.0.1/12 - 10.111.255.254/12</td>
+</tr>
+<tr>
+<td align="center" valign="middle">7</td>
+<td align="center" valign="middle">10.112.0.0/12</td>
+<td align="center" valign="middle">10.127.255.255/12</td>
+<td align="center" valign="middle">10.112.0.1/12 - 10.127.255.254/12</td>
+</tr>
+<tr>
+<td align="center" valign="middle">8</td>
+<td align="center" valign="middle">10.128.0.0/12</td>
+<td align="center" valign="middle">10.143.255.255/12</td>
+<td align="center" valign="middle">10.128.0.1/12 - 10.143.255.254/12</td>
+</tr>
+<tr>
+<td align="center" valign="middle">9</td>
+<td align="center" valign="middle">10.144.0.0/12</td>
+<td align="center" valign="middle">10.159.255.255/12</td>
+<td align="center" valign="middle">10.144.0.1/12 - 10.159.255.254/12</td>
+</tr>
+<tr>
+<td align="center" valign="middle">10</td>
+<td align="center" valign="middle">10.160.0.0/12</td>
+<td align="center" valign="middle">10.175.255.255/12</td>
+<td align="center" valign="middle">10.160.0.1/12 - 10.175.255.254/12</td>
+</tr>
+<tr>
+<td align="center" valign="middle">11</td>
+<td align="center" valign="middle">10.176.0.0/12</td>
+<td align="center" valign="middle">10.191.255.255/12</td>
+<td align="center" valign="middle">10.176.0.1/12 - 10.191.255.254/12</td>
+</tr>
+<tr>
+<td align="center" valign="middle">12</td>
+<td align="center" valign="middle">10.196.0.0/12</td>
+<td align="center" valign="middle">10.207.255.255/12</td>
+<td align="center" valign="middle">10.196.0.1/12 - 10.207.255.254/12</td>
+</tr>
+<tr><td align="center" valign="middle">13</td>
+<td align="center" valign="middle">10.208.0.0/12</td>
+<td align="center" valign="middle">10.223.255.255/12</td>
+<td align="center" valign="middle">10.208.0.1/12 - 10.223.255.254/12</td>
+</tr>
+<tr>
+<td align="center" valign="middle">14</td>
+<td align="center" valign="middle">10.224.0.0/12</td>
+<td align="center" valign="middle">10.239.255.255/12</td>
+<td align="center" valign="middle">10.224.0.1/12 - 10.239.255.254/12</td>
+</tr>
+<tr>
+<td align="center" valign="middle">15</td>
+<td align="center" valign="middle" style="color: #ff0000"><em>10.240.0.0/12</em></td>
+<td align="center" valign="middle" style="color: #ff0000"><em>10.255.255.255/12</em></td>
+<td align="center" valign="middle"style="color: #ff0000"><em>10.240.0.1/12 - 10.255.255.254/12</em></td>
+</tr>
+</table>
+<br />
+<hr />
+  <p>En la sigiente tabla les quiero mostrar unas cuantas subredes que se puede obtener dividiendo la <strong>red clase C</strong> y el rango de los hosts dentro de cada subred.</p><br /><br />
+  <table style="border: 1px solid ; border-collapse: collapse; border-spacing: 1px; width: 700px; left: 1px; top: 1px; background-color: #E6E6FA">
+<tr>
+<td><div style="text-align: center">Máscara de red<br />
+'decimal puntado'</div>
+</td>
+<td><div style="text-align: center">Máscara de red<br />en formato corto</div></td>
+<td><div style="text-align: center">Rango de IP<br />de host en una subred</div></td>
+<td><div style="text-align: center">Rango de<br />subredes posibles</div></td>
+</tr>
+<tr>
+<td align="center" valign="middle">255.255.255.0</td>
+<td align="center" valign="middle">/24</td>
+<td align="center" valign="middle">254 IP de hosts</td>
+<td><div style="text-align: center">no se puede obtener subredes<br />tenemos una red clase C<br />direcciones IP dentro de ...0 a ...255</div></td>
+</tr>
+<tr>
+<td align="center" valign="middle">255.255.255.128</td>
+<td align="center" valign="middle">/25</td>
+<td align="center" valign="middle">126 IP de hosts</td>
+<td align="center" valign="middle">2 subredes<br />direcciones IP dentro de<br /> ...0 a ...127 / ...128 a ...255</td>
+</tr>
+<tr>
+<td align="center" valign="middle">255.255.255.192</td>
+<td align="center" valign="middle">/26</td>
+<td align="center" valign="middle">62 IP de hosts</td>
+<td align="center" valign="middle">4 subredes<br />direcciones IP dentro de<br />0-63 / 64-123 / 124-191 / 192-255</td>
+</tr>
+<tr>
+<td align="center" valign="middle">255.255.255.224</td>
+<td align="center" valign="middle">/27</td>
+<td align="center" valign="middle">30 IP de hosts</td>
+<td align="center" valign="middle">8 subredes<br />direcciones IP dentro de<br />0-31 / 32-63 / 64-95 / 96-127<br />128-159 / 160-191 / 192-223 / 224-255</td>
+</tr>
+<tr>
+<td align="center" valign="middle">255.255.255.240</td>
+<td align="center" valign="middle">/28</td>
+<td align="center" valign="middle">14 IP de hosts</td>
+<td align="center" valign="middle">16 subredes<br />direcciones IP dentro de<br />0-15 / 16-31 / 32-47 / 48-63<br />64-79 / 80-95 / 96-111 / 112-127<br />128-143 / 144-159 / 160-175 / 176-191<br />192-207 / 208-223 / 224-239 / 240-255</td>
+</tr>
+<tr>
+<td align="center" valign="middle">255.255.255.248</td>
+<td align="center" valign="middle">/29</td>
+<td align="center" valign="middle">6 IP de hosts</td>
+<td align="center" valign="middle">32 subredes<br />direcciones IP dentro de<br />0-7 / 8-15 / 16-23 / 24-31<br />32-39 / 40-47 / 48-55 / 56-63<br />64-71 / 72-79 / 80-87 / 88-95<br />96-103 / 104-111 / 112-119 / 120-127<br />etc.</td>
+</tr>
+<tr>
+<td align="center" valign="middle">255.255.255.252</td>
+<td align="center" valign="middle">/30</td>
+<td align="center" valign="middle">2 IP de hosts</td>
+<td align="center" valign="middle">64 subredes<br />el limite - no se puede obtener<br />más subtrdes</td>
+</tr>
+<tr>
+<td align="center" valign="middle">255.255.255.254</td>
+<td align="center" valign="middle">/31</td>
+<td align="center" valign="middle">no se puede obtener<br />direcciones de host<br />dentro de una subred</td>
+<td align="center" valign="middle">no hay más subredes</td>
+</tr>
+<tr>
+<td align="center" valign="middle">255.255.255.255</td>
+<td align="center" valign="middle">/32</td>
+<td align="center" valign="middle">dirección IP de host</td>
+<td align="center" valign="middle">dirección IP de host<br />con excepción de direcciones<br />...0 - IP de red y ...255 IP de difusión</td>
+</tr>
+</table>
+<br style="clear: both" />
+<br />
+<hr />
 
 </body>
 </html>
